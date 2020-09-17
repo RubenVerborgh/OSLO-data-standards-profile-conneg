@@ -213,6 +213,58 @@ Host: council.my
     </ul>
   </div>
 
+  <div class="slide" id="dxwg">
+    <h2>
+      We designed <em>profile negotiation</em> as part of<br>
+      the W3C Data Exchange Working Group.
+    </h2>
+    <ul>
+      <li>currently a <a href="https://profilenegotiation.github.io/I-D-Profile-Negotiation/I-D-Profile-Negotiation.html">draft</a> aimed for IETF</li>
+      <li class="next">
+        design decisions
+        <ul>
+          <li class="next">a profile is identified by a URI</li>
+          <li class="next">profiles can work across content types</li>
+          <li class="next">representations can conform to multiple profiles</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="profile-request">
+    <h2>
+      Clients indicate their support<br>
+      or preference for certain profiles.
+    </h2>
+    <h3>HTTP request</h3>
+<pre><code>GET /decisions/3147 HTTP/1.1
+Host: council.my
+Accept: application/ld+json;q=1.0,text/turtle;q=0.8
+<strong>Accept-Profile:</strong>
+<strong>    "https://example.org/profiles/council-decision"; q=1.0,</strong>
+<strong>    "https://example.org/profiles/person-foaf"; q=0.8,</strong>
+<strong>    "https://example.org/profiles/person-schema-org"; q=0.6</strong>
+…
+</code></pre>
+  </div>
+
+  <div class="slide" id="profile-response">
+    <h2>
+      Servers indicate the profiles<br>
+      to which the representation conforms.
+    </h2>
+    <h3>HTTP response</h3>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/ld+json
+Content-Language: en
+<strong>Link: &lt;https://example.org/profiles/council-decision&gt;;</strong>
+<strong>          rel="profile",</strong>
+<strong>      &lt;https://example.org/profiles/person-schema-org&gt;;</strong>
+<strong>          rel="profile"</strong>
+…
+</code></pre>
+  </div>
+
   <div class="toc slide" id="recap">
     <ul>
       <li><a href="#toc-profiles">Data profiles</a></li>
