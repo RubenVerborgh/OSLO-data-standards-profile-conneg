@@ -43,6 +43,79 @@
     </ul>
   </div>
 
+  <div class="slide" id="different-formats">
+    <h2>
+      The same dataset can be represented<br>
+      in many different formats.
+    </h2>
+    <ul>
+      <li>
+        We refer to them as <em>media types</em><br>
+        or <em>content types</em>.
+        <ul>
+          <li class="next">XML</li>
+          <li class="next">JSON</li>
+          <li class="next">
+            <del>RDF</del>
+            <ul>
+              <li>Turtle</li>
+              <li>N-Triples</li>
+              <li>RDF/XML</li>
+              <li>JSON-LD</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="ambiguous-formats">
+    <h2>
+      However, a content type is insufficient<br>
+      to fully determine the representation.
+    </h2>
+    <ul>
+      <li>XML, but what schema?</li>
+      <li>JSON, but what property names?</li>
+      <li>Turtle, but what ontologies?</li>
+      <li>RDF/XML, but what structure?</li>
+      <li>JSON-LD, but what framing?</li>
+    </ul>
+  </div>
+
+  <div class="slide" id="specific-content-types">
+    <h2>
+      Creating more specific content types<br>
+      simply does not scale.
+    </h2>
+    <ul>
+      <li><code>text/vnd.council.decision+turtle</code></li>
+      <li><code>application/vnd.council.decision+ld+json</code></li>
+      <li><code>application/vnd.foaf.person+ld+json</code></li>
+      <li><code>application/vnd.council.decision.foaf.person+ld+json</code> </li>
+      <li>…</li>
+    </ul>
+  </div>
+
+  <div class="slide" id="profiles">
+    <h2>
+      A <em>profile</em> is an independently combinable<br>
+      set of structural and semantic constraints.
+    </h2>
+    <ul>
+      <li>https://example.org/profiles/council-decision</li>
+      <li>https://example.org/profiles/person-foaf</li>
+      <li>https://example.org/profiles/person-schema-org</li>
+      <li>
+        https://schema.org/
+        <ul>
+          <li>https://schema.org/docs/jsonldcontext.jsonld</li>
+        </ul>
+      </li>
+      <li>…</li>
+    </ul>
+  </div>
+
   <div class="toc slide" id="toc-conneg">
     <ul>
       <li><a href="#toc-profiles">Data profiles</a></li>
